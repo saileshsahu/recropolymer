@@ -1,69 +1,521 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Welcome to Firebase Hosting</title>
-    <style media="screen">
-      body {
-        font-family: Roboto, Arial, sans-serif;
-        background: #ECEFF1;
-        color: rgba(0,0,0,0.87);
-      }
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
 
-      a {
-        color: rgb(3,155,229);
-      }
+<html lang="en">
 
-      #message {
-        max-width: 400px;
-        margin: 40px auto;
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
-        border-radius: 2px;
-        background: white;
-        padding: 16px 24px;
-      }
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Recro">
+  <title>Recro</title>
 
-      #message h1 {
-        font-size: 22px;
-        font-weight: 500;
-        text-align: center;
-        margin: 0 0 16px;
-      }
+  <!-- Place favicon.ico in the `app/` directory -->
 
-      #message p {
-        font-weight: 300;
-        line-height: 150%;
-      }
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#2E3AA1">
 
-      #message ul {
-        list-style: none;
-        margin: 16px 0 0;
-        padding: 0;
-        text-align: center;
-      }
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
 
-      #message li a {
-        display: inline-block;
-        padding: 8px;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: 500;
-        background: rgb(3,155,229);
-        color: white;
-        border: 1px solid rgb(3,155,229);
-        border-radius: 3px;
-        font-size: 14px;
-        box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h1>Welcome to Firebase Hosting</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <ul>
-        <li><a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a></li>
-      </ul>
-    </div>
-  </body>
+  <!-- Tile color for Win8 -->
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="PSK">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8 (144x144) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- endbuild -->
+
+  <!-- Because this project uses vulcanize this should be your only html import
+       in this file. All other imports should go in elements.html -->
+  <link rel="import" href="elements/elements.html">
+
+  <!-- For shared styles, shared-styles.html import in elements.html -->
+  <style is="custom-style" include="shared-styles"></style>
+
+  <style>
+  .card1 {
+      position: relative;
+      display: inline-block;
+      width: 300px;
+      height: 240px;
+      margin: 5px;
+      vertical-align: top;
+      background: url(images/ather.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+    }
+
+  .card2 {
+      position: relative;
+      display: inline-block;
+      width: 300px;
+      height: 240px;
+      margin: 5px;
+      vertical-align: top;
+      background: url(images/yatis.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+    }
+
+  .card3 {
+      position: relative;
+      display: inline-block;
+      width: 300px;
+      height: 240px;
+      margin: 5px;
+      vertical-align: top;
+      background: url(images/drivekool.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+    }
+
+  .card4 {
+      position: relative;
+      display: inline-block;
+      width: 300px;
+      height: 240px;
+      margin: 5px;
+      vertical-align: top;
+      background: url(images/dealocx.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+    }
+
+  .card5 {
+      position: relative;
+      display: inline-block;
+      width: 300px;
+      height: 240px;
+      margin: 5px;
+      vertical-align: top;
+      background: url(images/venture.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+    }
+
+  .card6 {
+      position: relative;
+      display: inline-block;
+      width: 300px;
+      height: 240px;
+      margin: 5px;
+      vertical-align: top;
+      background: url(images/stargoal.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+    }
+
+  .card7 {
+      position: relative;
+      display: inline-block;
+      width: 300px;
+      height: 240px;
+      margin: 5px;
+      vertical-align: top;
+      background: url(images/bullbear.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+    }
+
+  .card8 {
+      position: relative;
+      display: inline-block;
+      width: 300px;
+      height: 240px;
+      margin: 5px;
+      vertical-align: top;
+      background: url(images/stayboat.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+    }
+
+  .card9 {
+      position: relative;
+      display: inline-block;
+      width: 300px;
+      height: 240px;
+      margin: 5px;
+      vertical-align: top;
+      background: url(images/exaag.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+    }
+  </style>
+</head>
+
+<body unresolved>
+  <!-- build:remove -->
+  <span id="browser-sync-binding"></span>
+  <!-- endbuild -->
+
+  <template is="dom-bind" id="app">
+
+    <paper-drawer-panel id="paperDrawerPanel">
+      <!-- Drawer Scroll Header Panel -->
+      <paper-scroll-header-panel drawer fixed>
+
+        <!-- Drawer Toolbar -->
+        <paper-toolbar id="drawerToolbar">
+          <span class="menu-name">Menu</span>
+        </paper-toolbar>
+
+        <!-- Drawer Content -->
+        <paper-menu class="app-menu" attr-for-selected="data-route" selected="[[route]]">
+          <a data-route="home" href="{{baseUrl}}">
+            <iron-icon icon="home"></iron-icon>
+            <span>Home</span>
+          </a>
+
+          <a data-route="users" href="{{baseUrl}}users">
+            <iron-icon icon="extension"></iron-icon>
+            <span>Methodology</span>
+          </a>
+
+          <a data-route="portfolio" href="{{baseUrl}}portfolio">
+            <iron-icon icon="work"></iron-icon>
+            <span>Portfolio</span>
+          </a>
+
+          <a data-route="technology" href="{{baseUrl}}technology">
+            <iron-icon icon="settings-cell"></iron-icon>
+            <span>Technology</span>
+          </a>
+
+          <a data-route="engagement" href="{{baseUrl}}engagement">
+            <iron-icon icon="supervisor-account"></iron-icon>
+            <span>Engagement</span>
+          </a>
+
+          <a data-route="contact" href="{{baseUrl}}contact">
+            <iron-icon icon="mail"></iron-icon>
+            <span>Contact</span>
+          </a>
+        </paper-menu>
+      </paper-scroll-header-panel>
+
+      <!-- Main Area -->
+      <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>
+        <!-- Main Toolbar -->
+        <style is="custom-style">
+          paper-toolbar {
+            --paper-toolbar-background: #dc143c;
+            --paper-toolbar-title: {
+              font-style: italic;
+              font-weight: bold;
+            };
+          }
+        </style>
+
+        <paper-toolbar id="mainToolbar" class="tall">
+
+          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+
+          <span class="space"></span>
+
+          <!-- Toolbar icons -->
+          <paper-icon-button icon="refresh"></paper-icon-button>
+          <paper-icon-button icon="search"></paper-icon-button>
+
+          <!-- Application name -->
+          <div class="middle middle-container">
+            <div class="app-name">Recro.io</div>
+          </div>
+
+          <!-- Application sub title -->
+          <div class="bottom bottom-container">
+            <div class="bottom-title">Recreate Restore Revive</div>
+          </div>
+        </paper-toolbar>
+
+        <!-- Main Content -->
+        <div class="content">
+          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+            <section data-route="home" tabindex="-1">
+              <paper-material elevation="1">
+                <!--<my-greeting></my-greeting>-->
+                <h1>Hello!</h1>
+
+                <p>We, at Recro, help entrepreneurs evolve their business ideas into products which are just right for the market. We help your idea take shape, acting as the bridge between your mind and the business world. Our primary focus is on the Lean Methodology, which we optimally utilize to ensure a faster delivery of products to the end customer.</p>
+              </paper-material>
+
+              <paper-material>
+                  <center><img src="images/founded.png" width="15%"></center>
+                  <center><strong><h1>Founded in 2012</h1></strong></center>
+                  <center><p>We’ve been successfully catering to the needs of multiple startups and firms since 2012, and are growing at an immense rate.</p></center>
+              </paper-material>
+
+              <paper-material>
+                  <center><img src="images/whyus.png" width="15%"></center>
+                  <center><strong><h1>Why Us</h1></strong></center>
+                  <center><p>We understand your expectations from your idea, and relentlessly tire to replicate your goals in a realistic manner.</p></center>
+              </paper-material>
+
+              <center><h1>Our Process</h1></center>
+
+              <paper-material>
+                  <img src="images/ideation.png" width="40px" style="float:left; padding-right:20px; padding-top:5px; padding-bottom:5px;"><h1><a data-route="ideation" href="{{baseUrl}}ideation">Ideation</a></h1>
+              </paper-material>
+
+              <paper-material>
+                  <img src="images/consult.png" width="40px" style="float:left; padding-right:20px; padding-top:5px; padding-bottom:5px;"><h1><a data-route="consulting" href="{{baseUrl}}consulting">Consulting</a></h1>
+              </paper-material>
+
+              <paper-material>
+                  <img src="images/dev.png" width="40px" style="float:left; padding-right:20px; padding-top:5px; padding-bottom:5px;"><h1><a data-route="development" href="{{baseUrl}}development">Development</a></h1>
+              </paper-material>
+
+              <paper-material>
+                  <img src="images/growth.png" width="40px" style="float:left; padding-right:20px; padding-top:5px; padding-bottom:5px;"><h1><a data-route="growth" href="{{baseUrl}}growth">Growth Hacking</a></h1>
+              </paper-material>
+
+              <paper-material>
+                  <img src="images/support.png" width="40px" style="float:left; padding-right:20px; padding-top:5px; padding-bottom:5px;"><h1><a data-route="support" href="{{baseUrl}}support">Support</a></h1>
+              </paper-material>
+
+            </section>
+
+            <section data-route="users" tabindex="-1">
+              <paper-material elevation="1">
+                <strong><h1>Recro Lean Management</h1></strong>
+                <center><img src="images/lean.png" width="40%"></center>
+                <p>At Recro, we religiously embrace Lean Methodology. Lean Development ensures that there is a scientific approach for creating and managing software along with a faster delivery of desired product to our customers.</p>
+
+<p>By embracing Lean we ensure that our clients are able to continuously test their vision during the entire development cycle thus ensuring minimum wastage in the entire idea to delivery journey.</p>
+
+<p>Our Recro Lean methodology is based on Lean Development and has been optimized for delivery of quality products at a much faster pace. At heart of this methodology lies the BUILD-MEASURE- LEARN loop which, when backed by Lean Guiding Principles , helps in removal of uncertainties and impediments and creates true value for our clients.</p>                
+              </paper-material>
+
+              <paper-material>
+                <strong><h1>Recro Design Thinking</h1></strong>
+                <center><img src="images/rdt.png" width="80%"></center>
+                <p>All of Recro’s work is done in consideration of the capabilities of our clients and the needs of their customers. As we iterate toward a final solution, we assess and reassess our designs. Our goal is to deliver appropriate, actionable, and tangible strategies. The result: new, innovative avenues for growth that are grounded in business viability and market desirability. We also provide DT consulting to our clients and help them n generating real personas of their customers.</p>
+              </paper-material>
+
+              <paper-material>
+                <strong><h1>Agile Methodology</h1></strong>
+                <center><img src="images/agile.png" width="40%"></center>
+                <p>All of Recro’s work is done in consideration of the capabilities of our clients and the needs of their customers. As we iterate toward a final solution, we assess and reassess our designs. Our goal is to deliver appropriate, actionable, and tangible strategies. The result: new, innovative avenues for growth that are grounded in business viability and market desirability. We also provide DT consulting to our clients and help them n generating real personas of their customers.</p>
+              </paper-material>
+
+            </section>
+
+            <section data-route="user-info" tabindex="-1">
+              <paper-material elevation="-1">
+                <h1 class="page-title" tabindex="-1">User: {{params.name}}</h1>
+                <div>This is {{params.name}}'s section</div>
+              </paper-material>
+            </section>
+
+            <section data-route="portfolio">
+              <paper-material elevation="1">
+                 <strong><h1>Portfolio</h1></strong>
+              </paper-material>
+              
+              <div class="card1" tabindex="1">
+                <paper-ripple recenters></paper-ripple>
+              </div> 
+
+              <div class="card2" tabindex="1">
+                <paper-ripple recenters></paper-ripple>
+              </div>
+
+              <div class="card3" tabindex="1">
+                <paper-ripple recenters></paper-ripple>
+              </div>
+
+              <div class="card4" tabindex="1">
+                <paper-ripple recenters></paper-ripple>
+              </div> 
+
+              <div class="card5" tabindex="1">
+                <paper-ripple recenters></paper-ripple>
+              </div> 
+
+              <div class="card6" tabindex="1">
+                <paper-ripple recenters></paper-ripple>
+              </div> 
+
+              <div class="card7" tabindex="1">
+                <paper-ripple recenters></paper-ripple>
+              </div> 
+
+              <div class="card8" tabindex="1">
+                <paper-ripple recenters></paper-ripple>
+              </div> 
+
+              <div class="card9" tabindex="1">
+                <paper-ripple recenters></paper-ripple>
+              </div>
+
+            </section>
+
+            <section data-route="technology">
+              <paper-material elevation="1">
+                 <strong><h1>Technology</h1></strong>
+                 </paper-material>
+
+                 <paper-material>
+                 <h1>Front End</h1>
+                 <my-list></my-list>
+                 </paper-material>
+
+                 <paper-material>
+                 <h1>Middle Ware</h1>
+                 <my-list1></my-list1>
+                 </paper-material>
+                 
+                 <paper-material>
+                 <h1>Database</h1>
+                 <my-list2></my-list2>
+                 </paper-material>
+
+                 <paper-material>
+                 <h1>Hosting</h1>
+                 <my-list3></my-list3>
+                 </paper-material>
+                 
+                 
+            </section>
+
+            <section data-route="engagement">
+              <paper-material elevation="1">
+                 <strong><h1>Engagement Model</h1></strong>
+                 </paper-material>
+
+            <paper-material>
+                  <center><img src="images/cluster.png" width="15%"></center>
+                  <center><strong><h1>Recro Cluster</h1></strong></center>
+                  <center><p>Recro-Clusters ensure that the team is located in vicinity to each other. Clusters also ensure the presence of practices like ‘Pair-programming’ and ‘Self –organization’. These are the ways our development team feels ever motivated and prepared for upheaval of any latent risks involved.</p></center>
+              </paper-material>
+              
+            <paper-material>
+                  <center><img src="images/fixed.png" width="15%"></center>
+                  <center><strong><h1>Fixed Cost</h1></strong></center>
+                  <center><p>Fixed cost, is the business expense independent on the level of goods or services produced by the business. They are usually bound by factors such as time, salaries or costs whose presence cannot be predicted beforehand.</p></center>
+            </paper-material>
+              
+            <paper-material>
+                  <center><img src="images/time.png" width="15%"></center>
+                  <center><strong><h1>Time and Material</h1></strong></center>
+                  <center><p>Allocating variable time and resources across various subsets can be a confusing task. The strategies and algorithms put in use by the professionals at RECRO makes it a significantly easier task. Again, the client’s input are kept into considerations at every stage. Flexibility and regular upgradations are prioritized for any project.</p></center>
+              </paper-material>
+                   
+            </section>
+
+            <section data-route="contact" tabindex="-1">
+              <paper-material elevation="1">
+                <strong><h1>Contact</h1></strong>
+                <p>Web: www.recro.io</p>
+                <p>Mail: info@recro.io</p>
+                <p>Phone: +91 8041 256 263</p>
+              </paper-material>
+
+              <paper-material>
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0236065147046!2d77.70985331428415!3d12.970341218416573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae10d5c60bc217%3A0x9659d278f505f955!2sRecrosoft+Technologies!5e0!3m2!1sen!2sin!4v1465204899116" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+              </paper-material>
+
+
+            </section>
+
+            <section data-route="ideation">
+              <paper-material elevation="1">
+                 <p>Ideation</p>
+                 </paper-material>
+            </section>
+
+            <section data-route="consulting">
+              <paper-material elevation="1">
+                 <p>Consulting</p>
+                 </paper-material>
+            </section>
+
+            <section data-route="development">
+              <paper-material elevation="1">
+                 <p>Development</p>
+                 </paper-material>
+            </section>
+
+            <section data-route="growth">
+              <paper-material elevation="1">
+                 <p>Growth Hacking</p>
+                 </paper-material>
+            </section>
+
+            <section data-route="support">
+              <paper-material elevation="1">
+                 <p>Support And Maintenance</p>
+                 </paper-material>
+            </section>
+
+          </iron-pages>
+        </div>
+      </paper-scroll-header-panel>
+    </paper-drawer-panel>
+
+    <paper-toast id="toast">
+      <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
+    </paper-toast>
+
+    <!-- Uncomment next block to enable Service Worker support (1/2) -->
+    <!--
+    <paper-toast id="caching-complete"
+                 duration="6000"
+                 text="Caching complete! This app will work offline.">
+    </paper-toast>
+
+    <platinum-sw-register auto-register
+                          clients-claim
+                          skip-waiting
+                          base-uri="bower_components/platinum-sw/bootstrap"
+                          on-service-worker-installed="displayInstalledToast">
+      <platinum-sw-cache default-cache-strategy="fastest"
+                         cache-config-file="cache-config.json">
+      </platinum-sw-cache>
+    </platinum-sw-register>
+    -->
+
+  </template>
+
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
+</body>
+
 </html>
